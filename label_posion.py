@@ -24,7 +24,7 @@ def poison_labels(input_file, poison_ratio):
 
 def main():
     # 设置要修改的标签比例
-    poison_ratio = 0.5
+    poison_ratio = 0.7
 
     # 调用函数进行标签投毒
     poison_labels(r"D:\大学文件\大三下\人工智能导论\Mnist\labels_train.txt", poison_ratio)
