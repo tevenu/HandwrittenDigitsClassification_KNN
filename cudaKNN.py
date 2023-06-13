@@ -24,11 +24,11 @@ class KNN:
         self.train_labels = []
         self.test_labels = []
         # train_label_path = r"D:\大学文件\大三下\人工智能导论\Mnist\labels_train.txt"
-        train_label_path = "poisoned_label/poisoned_labels_train_70.txt"
+        train_label_path = r"labels/labels_train.txt"
         test_label_path = r"labels/labels_test.txt"
         read_labels(train_label_path, self.train_labels)
         read_labels(test_label_path, self.test_labels)
-        self.train_vectors = torch.from_numpy(np.loadtxt('train_vectors.txt')).cuda()
+        self.train_vectors = torch.from_numpy(np.loadtxt('poison_train_vectors_0.4.txt')).cuda()
 
     def classify(self, path):
         self.test_vector = torch.from_numpy(img2vec(path)).cuda()
@@ -113,7 +113,7 @@ def main():
         acc = a.evaluate(test_size, 4)
         print(acc)
         with open('poison_test_result.txt', 'a', encoding='utf-8') as f:
-            f.write("标签投毒比例:70%,k:{},测试数量:{},准确率:{}\n".format(k, test_size, acc))
+            f.write("椒盐投毒比例:0.4,k:{},测试数量:{},准确率:{}\n".format(k, test_size, acc))
 
 
 if __name__ == '__main__':

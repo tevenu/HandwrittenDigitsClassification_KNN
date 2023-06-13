@@ -36,4 +36,4 @@ def poison_train_img(poison_ratio):
 
 
 if __name__ == '__main__':
-    poison_train_img(0.2)
+    poison_train_img(0.4)

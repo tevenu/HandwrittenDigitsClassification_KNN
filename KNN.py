@@ -135,7 +135,7 @@ def main():
     acc = a.evaluate(test_size, 8)
     print(acc)
     with open('test_result.txt', 'a', encoding='utf-8') as f:
-        f.write("测试数量:{},准确率:{}\n".format(test_size, acc))
+        f.write("距离:L3,测试数量:{},准确率:{}\n".format(test_size, acc))
 
 
 if __name__ == "__main__":
