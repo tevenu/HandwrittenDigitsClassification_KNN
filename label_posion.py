@@ -27,7 +27,7 @@ def main():
     poison_ratio = 0.9
 
     # 调用函数进行标签投毒
-    poison_labels(r"D:\大学文件\大三下\人工智能导论\Mnist\labels_train.txt", poison_ratio)
+    poison_labels(r".\Mnist\labels_train.txt", poison_ratio)
 
 
 if __name__ == "__main__":

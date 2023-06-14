@@ -23,9 +23,9 @@ class KNN:
         self.test_vector = np.empty(shape=[1, 784])
         self.train_labels = []
         self.test_labels = []
-        # train_label_path = r"D:\大学文件\大三下\人工智能导论\Mnist\labels_train.txt"
-        train_label_path = r"labels/labels_train.txt"
-        test_label_path = r"labels/labels_test.txt"
+        # train_label_path = r".\Mnist\labels_train.txt"
+        train_label_path = r"Mnist/labels_train.txt"
+        test_label_path = r"Mnist/labels_test.txt"
         read_labels(train_label_path, self.train_labels)
         read_labels(test_label_path, self.test_labels)
         self.train_vectors = torch.from_numpy(np.loadtxt('poison_train_vectors_0.4.txt')).cuda()
@@ -72,7 +72,7 @@ class KNN:
     # 多线程执行中每一个线程执行的函数
     def target(self, test_begin, test_end, counts):
         count = 0  # 局部变量，存储每一个线程的成功识别次数
-        file_root = r"D:\大学文件\大三下\人工智能导论\Mnist\img_test"
+        file_root = r".\Mnist\img_test"
         for i in range(test_begin, test_end):
             file_path = file_root + '\\' + '%s.png' % i
             value = self.classify(file_path)

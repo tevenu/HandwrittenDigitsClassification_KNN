@@ -15,7 +15,7 @@ def add_salt_pepper_noise(image, salt_prob, pepper_prob):
 
 # 制作投毒数据集
 def poison_train_img(poison_ratio):
-    file_root = r"D:\大学文件\大三下\人工智能导论\Mnist\img_train"
+    file_root = r".\Mnist\img_train"
     train_vectors = np.empty(shape=[60000, 784])
     for i in range(0, 60000):
         file_path = file_root + '\\' + '%s.png' % i
